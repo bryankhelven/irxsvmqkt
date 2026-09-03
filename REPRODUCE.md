@@ -3,7 +3,7 @@
 The artifact supports three distinct levels of verification. Reviewers do not need to
 retrain BERTweet to check the reported numbers.
 
-## Level 0 — integrity + headline metric verification
+## Level 0 -- integrity + headline metric verification
 
 Expected time: seconds to a few minutes. CPU only. No source tweet text required.
 
@@ -25,7 +25,7 @@ The verifier recomputes Macro-F1/accuracy directly from committed prediction fil
 including the leaky-marker diagnostics, sparse baseline, BERTweet seed runs, shortcut
 collapse, and external transfer.
 
-## Level 1 — reconstruct the audited sparse pipeline
+## Level 1 -- reconstruct the audited sparse pipeline
 
 Expected resources: CPU + Internet access for the public dataset download.
 
@@ -72,7 +72,7 @@ python scripts/fetch_internal_data.py
 
 No manual placement of `train.csv` or `test.csv` is required.
 
-## Level 2 — neural reproduction
+## Level 2 -- neural reproduction
 
 GPU required.
 
@@ -93,9 +93,9 @@ The BERTweet runner:
 
 The frozen model/training protocol is in `protocols/`.
 
-## Level 3 — uncertainty + external transfer
+## Level 3 -- uncertainty + external transfer
 
-After Levels 1–2:
+After Levels 1-2:
 
 ```bash
 bash scripts/run.sh stats

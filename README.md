@@ -14,7 +14,7 @@ The study asks four empirical questions:
 
 1. **How much can explicit distant-supervision markers inflate apparent performance?**
 2. **What signal remains after direct marker leakage, duplicates, conflicts, and
-   train–test overlap are controlled?**
+   train-test overlap are controlled?**
 3. **Does tweet-specific contextual pretraining improve the audited clean benchmark
    without relying on the explicit marker shortcut?**
 4. **Do the clean internal classifiers transfer to a separately constructed external
@@ -52,6 +52,7 @@ python -m venv .venv
 . .venv/bin/activate
 pip install -r environment/requirements-core.txt
 python scripts/artifact_doctor.py
+python scripts/check_typography.py .
 python scripts/verify_predictions.py
 ```
 
@@ -84,12 +85,12 @@ component.
 
 ## Reproduction levels
 
-- **Level 0 — verify committed results:** seconds/minutes, CPU only.
-- **Level 1 — rebuild audited sparse pipeline:** the artifact automatically downloads
-  the pinned public Kaggle dataset, verifies the frozen hashes, then runs H03–H06.
-- **Level 2 — retrain BERTweet:** CUDA GPU required; frozen seeds and validation
+- **Level 0 -- verify committed results:** seconds/minutes, CPU only.
+- **Level 1 -- rebuild audited sparse pipeline:** the artifact automatically downloads
+  the pinned public Kaggle dataset, verifies the frozen hashes, then runs H03-H06.
+- **Level 2 -- retrain BERTweet:** CUDA GPU required; frozen seeds and validation
   membership.
-- **Level 3 — recompute uncertainty and external transfer:** no external tuning;
+- **Level 3 -- recompute uncertainty and external transfer:** no external tuning;
   TweetEval is pinned to a fixed repository revision.
 
 Exact commands are in [`REPRODUCE.md`](REPRODUCE.md).

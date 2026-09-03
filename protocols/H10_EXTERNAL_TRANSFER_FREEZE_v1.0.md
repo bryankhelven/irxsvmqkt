@@ -95,7 +95,7 @@ No training occurs in H10.
 ### EXT-C-ALL
 All 784 TweetEval test rows after frozen external marker removal/normalization.
 
-### EXT-C-NOVEL — PRIMARY
+### EXT-C-NOVEL -- PRIMARY
 Remove from EXT-C-ALL any external test item whose normalized clean text is an exact
 match to any A-C internal train **or internal test** text.
 

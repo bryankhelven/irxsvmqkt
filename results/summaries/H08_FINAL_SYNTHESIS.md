@@ -1,7 +1,7 @@
 # H08 Final Qualitative Synthesis
 
 ## Status
-**PASS — H08 qualitative stage closed.**
+**PASS -- H08 qualitative stage closed.**
 
 The formal 64-case pilot was selected deterministically in H08A before the qualitative
 codebook was frozen. Two isolated Claude Code Haiku passes annotated only `case_id` and

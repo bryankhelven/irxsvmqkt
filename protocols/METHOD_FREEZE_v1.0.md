@@ -1,4 +1,4 @@
-# ERCEMAPI P1 — METHOD FREEZE v1.0
+# ERCEMAPI P1 -- METHOD FREEZE v1.0
 
 Status: **FROZEN BEFORE H06/H07 RESULTS**
 Freeze date: 2026-09-02
@@ -23,13 +23,13 @@ classification over a strong sparse baseline, especially at the irony-sarcasm bo
 
 ## 2. Frozen data conditions
 
-### A-L — Audited Matched Leaky
+### A-L -- Audited Matched Leaky
 Exactly the final A-C row IDs, after the H03 structural audit, using `text_leaky`:
 URL/user normalization is retained, explicit class markers remain.
 
 **Purpose:** paired estimate of direct marker leakage against A-C.
 
-### A-C — Audited Clean — PRIMARY
+### A-C -- Audited Clean -- PRIMARY
 H03 canonical clean split:
 - train: 58,784
 - test: 5,947
@@ -37,7 +37,7 @@ H03 canonical clean split:
 Uses `text_clean`, with the four explicit class markers removed after conservative
 normalization and after structural cleaning.
 
-### G-C — Group-Purged Clean — MANDATORY SENSITIVITY
+### G-C -- Group-Purged Clean -- MANDATORY SENSITIVITY
 Same 5,947 test IDs, in the same order, as A-C.
 Remove from the A-C training population every high-similarity train member connected
 to one of the 85 manually confirmed affected test items.
@@ -56,7 +56,7 @@ component-level extrapolation is an explicit methodological assumption.
 
 A-C remains the primary estimate. G-C is a mandatory sensitivity analysis.
 
-### U-L / U-C — archival / illustrative only
+### U-L / U-C -- archival / illustrative only
 The original unaudited split may be retained as a descriptive reproduction artifact,
 but it is not required for the paper's core matrix.
 
@@ -65,12 +65,12 @@ unaudited split mixes marker leakage with duplication/overlap contamination.
 
 ## 3. Diagnostics and sparse baselines
 
-### D0 — sanity baselines
+### D0 -- sanity baselines
 Run on A-C and G-C:
 - majority-class predictor;
 - stratified-random predictor using training-label priors, RNG seed 42.
 
-### D1 — direct marker rule
+### D1 -- direct marker rule
 Run on A-L only.
 Search exact markers case-insensitively:
 `#irony`, `#ironic`, `#sarcasm`, `#sarcastic`.
@@ -81,7 +81,7 @@ Prediction:
 
 Diagnostic only.
 
-### D2 — marker-only Logistic Regression
+### D2 -- marker-only Logistic Regression
 Run on A-L only.
 Four binary features, one for presence of each exact class marker.
 Logistic Regression:
@@ -93,7 +93,7 @@ Logistic Regression:
 
 Diagnostic only.
 
-### D3 — surface-only Logistic Regression
+### D3 -- surface-only Logistic Regression
 Run on A-C and G-C.
 No lexical identities.
 
@@ -114,7 +114,7 @@ Pipeline:
 
 Purpose: quantify nonlexical dataset-specific shortcuts that survive explicit-marker removal.
 
-### S1 — word TF-IDF + Logistic Regression — SUPPLEMENTARY
+### S1 -- word TF-IDF + Logistic Regression -- SUPPLEMENTARY
 Run on A-C and G-C if computationally trivial.
 
 Vectorizer:
@@ -128,7 +128,7 @@ Vectorizer:
 Classifier:
 - Logistic Regression, L2, C=1.0, solver=`lbfgs`, max_iter=3000.
 
-### S2 — word TF-IDF + LinearSVC — REQUIRED PRIMARY SPARSE
+### S2 -- word TF-IDF + LinearSVC -- REQUIRED PRIMARY SPARSE
 Run on A-C and G-C.
 
 Reuse the configuration selected in H03 validation:
@@ -142,7 +142,7 @@ Reuse the configuration selected in H03 validation:
 
 No retuning on G-C or final test.
 
-### S3 — char TF-IDF + LinearSVC — OPTIONAL SUPPLEMENTARY
+### S3 -- char TF-IDF + LinearSVC -- OPTIONAL SUPPLEMENTARY
 Run on A-C and G-C if resources permit.
 
 Predeclared fixed configuration, with no test-based tuning:
@@ -156,7 +156,7 @@ Predeclared fixed configuration, with no test-based tuning:
 
 ## 4. Neural model freeze
 
-### N1 — `vinai/bertweet-base` — REQUIRED PRIMARY NEURAL
+### N1 -- `vinai/bertweet-base` -- REQUIRED PRIMARY NEURAL
 
 #### Text adapter
 Use A-L/A-C/G-C frozen texts exactly as stored, except model-input-only normalization:
@@ -226,7 +226,7 @@ G-C:
 - if only seed 42 is run under the predeclared fallback, label it explicitly as a
   single-seed sensitivity.
 
-### N2 — `roberta-base` — OPTIONAL
+### N2 -- `roberta-base` -- OPTIONAL
 First neural model to cut. It is not required for validity.
 
 ## 5. Metrics

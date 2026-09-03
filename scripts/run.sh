@@ -5,7 +5,7 @@ export ARTIFACT_ROOT="$ROOT"
 MODE="${1:-quick}"
 
 echo "============================================================"
-echo " DOUBLE-ANONYMOUS ARTIFACT — REPRODUCTION RUNNER"
+echo " DOUBLE-ANONYMOUS ARTIFACT -- REPRODUCTION RUNNER"
 echo "============================================================"
 echo "root=$ROOT"
 echo "mode=$MODE"
@@ -13,6 +13,7 @@ echo
 
 if [ "$MODE" = "quick" ]; then
   python "$ROOT/scripts/artifact_doctor.py" || true
+  python "$ROOT/scripts/check_typography.py" "$ROOT" || true
   python "$ROOT/scripts/verify_predictions.py" || true
 
 elif [ "$MODE" = "sparse" ]; then
