@@ -1,0 +1,21 @@
+{
+  "internal": {
+    "D1_direct_marker_AL_macro_f1": 1.0,
+    "D2_marker_only_AL_macro_f1": 1.0,
+    "D3_surface_AC_macro_f1": 0.59352,
+    "S2_AC_macro_f1": 0.8255665906,
+    "S2_GC_macro_f1": 0.824277,
+    "BERT_AC_seed42_macro_f1": 0.88681574498,
+    "BERT_AC_seed2026_macro_f1": 0.882365,
+    "BERT_AC_seed7_macro_f1": 0.883851,
+    "BERT_AL_eval_AL_macro_f1": 1.0,
+    "BERT_AL_eval_AC_macro_f1": 0.200593
+  },
+  "external": {
+    "n_all": 784,
+    "n_exact_novel": 783,
+    "S2_EXT_C_NOVEL_macro_f1": 0.29746950941330336,
+    "BERT_EXT_C_NOVEL_mean_macro_f1": 0.2981017016065651,
+    "BERT_EXT_C_NOVEL_sample_sd": 0.004535774439835175
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "external_test_n": 784,
+  "external_novel_n": 783,
+  "external_hisim_purged_n": 782,
+  "tweets_with_frozen_markers_raw": 431,
+  "S2_EXT_C_NOVEL_macro_f1": 0.29746950941330336,
+  "S2_EXT_C_NOVEL_ci95": [
+    0.28531110126640286,
+    0.3116359348565374
+  ],
+  "BERT_EXT_C_NOVEL_mean_macro_f1": 0.2981017016065651,
+  "BERT_EXT_C_NOVEL_sample_sd": 0.004535774439835175,
+  "BERT42_minus_S2_delta": -0.001124529197355395,
+  "BERT42_minus_S2_ci95": [
+    -0.013055805302521362,
+    0.01032359895673852
+  ]
+}

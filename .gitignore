@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+data/raw/
+data/external/
+data/processed/
+data/derived/
+runs/
+reports/
+artifacts/
+models/
+provenance/
+*.pt
+*.bin
+.DS_Store
